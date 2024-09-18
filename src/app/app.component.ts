@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { HeaderComponent } from './header/header.component';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'viewchild-decorator';
+  @ViewChild(HeaderComponent) header:any
+  cdata=""
+  test(){
+
+    this.cdata=this.header.passtoParent()
+  }
 }
